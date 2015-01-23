@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+
+        <!-- Hero image -->
+        <ImageView android:layout_width="match_parent" android:layout_height="120dp"
+                   android:id="@+id/imgPlayerDetailHero"
+                   android:scaleType="centerCrop"
+                   android:adjustViewBounds="true"/>
+
+        <!-- Team color bar -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:id="@+id/layPlayerDetailsTeamBar"
+                      android:layout_gravity="bottom"
+                      android:background="@color/DireOrangeTransparent">
+
+            <!-- Player name-->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:id="@+id/txtPlayerDetailName"
+                      android:paddingLeft="10dp"
+                      android:paddingBottom="5dp"
+                      android:textSize="20dp"
+                      android:textColor="@color/White"
+                      android:text=""/>
+        </LinearLayout>
+
+        <!-- Player avatar -->
+        <ImageView android:layout_width="70dp" android:layout_height="70dp"
+                   android:id="@+id/imgPlayerDetailAvatar"
+                   android:layout_gravity="bottom|end"
+                   android:padding="10dp"/>
+    </FrameLayout>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:padding="10dp">
+        <!-- Tower damage-->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Tower damage"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/txtPlayerDetailTowerDamage"
+                  android:layout_alignParentRight="true"
+                  android:text="1620"/>
+        <!-- Hero damage-->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_below="@id/txtPlayerDetailTowerDamage"
+                  android:text="Hero damage"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/txtPlayerDetailHeroDamage"
+                  android:layout_below="@id/txtPlayerDetailTowerDamage"
+                  android:layout_alignParentRight="true"
+                  android:text="21080"/>
+        <!-- Hero healing-->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_below="@id/txtPlayerDetailHeroDamage"
+                  android:text="Hero healing"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/txtPlayerDetailHeroHealing"
+                  android:layout_below="@id/txtPlayerDetailHeroDamage"
+                  android:layout_alignParentRight="true"
+                  android:text="180"/>
+
+        <!-- Gold earned -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_below="@id/txtPlayerDetailHeroHealing"
+                  android:paddingTop="10dp"
+                  android:text="Gold earned"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/txtPlayerDetailHeroGoldEarned"
+                  android:layout_below="@id/txtPlayerDetailHeroHealing"
+                  android:layout_alignParentRight="true"
+                  android:paddingTop="10dp"
+                  android:text="180"/>
+        <!-- Gold spent -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_below="@id/txtPlayerDetailHeroGoldEarned"
+                  android:text="Gold spent"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/txtPlayerDetailHeroGoldSpent"
+                  android:layout_below="@id/txtPlayerDetailHeroGoldEarned"
+                  android:layout_alignParentRight="true"
+                  android:text="180"/>
+        <!--&lt;!&ndash; Gold lost&ndash;&gt;-->
+        <!--<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/txtPlayerDetailHeroGoldSpent"-->
+        <!--android:text="Gold lost (wrong)"/>-->
+        <!--<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"-->
+        <!--android:id="@+id/txtPlayerDetailHeroGoldLost"-->
+        <!--android:layout_below="@id/txtPlayerDetailHeroGoldSpent"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:text="180"/>-->
+        <!-- Gold left-->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_below="@id/txtPlayerDetailHeroGoldSpent"
+                  android:text="Gold left"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/txtPlayerDetailHeroGoldLeft"
+                  android:layout_below="@id/txtPlayerDetailHeroGoldSpent"
+                  android:layout_alignParentRight="true"
+                  android:text="180"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

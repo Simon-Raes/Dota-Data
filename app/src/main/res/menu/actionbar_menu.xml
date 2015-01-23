@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/spinGameModes"
+          android:showAsAction="always"
+          android:orderInCategory="0"
+          android:visible="false"
+          android:actionViewClass="android.widget.Spinner"/>
+    <item android:id="@+id/spinHeroes"
+          android:showAsAction="always"
+          android:orderInCategory="0"
+          android:visible="false"
+          android:actionViewClass="android.widget.Spinner"/>
+    <item android:id="@+id/spinRanking"
+          android:showAsAction="always"
+          android:orderInCategory="0"
+          android:visible="false"
+          android:actionViewClass="android.widget.Spinner"/>
+    <item android:id="@+id/spinGraphs"
+          android:showAsAction="always"
+          android:orderInCategory="0"
+          android:visible="false"
+          android:actionViewClass="android.widget.Spinner"/>
+
+    <item android:id="@+id/btnNote"
+          android:icon="@drawable/ic_action_edit"
+          android:title="Add note"
+          android:showAsAction="ifRoom"/>
+    <item android:id="@+id/btnFavourite"
+          android:icon="@drawable/ic_action_not_important"
+          android:title="Favourite match"
+          android:showAsAction="ifRoom"/>
+    <item android:id="@+id/btnRefresh"
+          android:icon="@drawable/ic_action_refresh"
+          android:title="Update"
+          android:showAsAction="always"/>
+
+    <!--
+    <item android:id="@+id/btnShare"
+          android:icon="@drawable/ic_action_share"
+          android:title="Share"
+          android:showAsAction="ifRoom"/>
+    -->
+    <item android:id="@+id/btnManageUsers"
+          android:icon="@drawable/ic_action_settings"
+          android:title="Manage users"
+          android:showAsAction="never"/>
+    <!--
+    <item android:id="@+id/btnSettings"
+          android:icon="@drawable/ic_action_settings"
+          android:title="Settings"
+          android:showAsAction="never"/>
+          -->
+    <item android:id="@+id/btnAbout"
+          android:icon="@drawable/ic_action_about"
+          android:title="About"
+          android:showAsAction="never"/>
+</menu>

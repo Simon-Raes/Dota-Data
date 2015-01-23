@@ -1,0 +1,289 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Risky Project Location:
+-----------------------
+The tools *should* handle project locations in any directory. However,
+due to bugs, placing projects in directories containing spaces in the
+path, or characters like ", ' and &, have had issues. We're working to
+eliminate these bugs, but to save yourself headaches you may want to
+move your project to a location where this is not a problem.
+C:\Users\Simon Raes\Desktop\Dota-Data-reboot
+              -                             
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .idea\
+* .idea\.name
+* .idea\compiler.xml
+* .idea\copyright\
+* .idea\copyright\profiles_settings.xml
+* .idea\encodings.xml
+* .idea\libraries\
+* .idea\libraries\android_support_v4.xml
+* .idea\libraries\jackson_annotations_2_3_1.xml
+* .idea\misc.xml
+* .idea\modules.xml
+* .idea\scopes\
+* .idea\scopes\scope_settings.xml
+* .idea\uiDesigner.xml
+* .idea\vcs.xml
+* .idea\workspace.xml
+* Dota Data.iml
+* README.md
+* ant.properties
+* build.xml
+* out\
+* out\production\
+* out\production\Dota Data\
+* out\production\Dota Data\Dota Data.apk
+* out\production\Dota Data\be\
+* out\production\Dota Data\be\simonraes\
+* out\production\Dota Data\be\simonraes\dotadata\
+* out\production\Dota Data\be\simonraes\dotadata\BuildConfig.class
+* out\production\Dota Data\be\simonraes\dotadata\R$attr.class
+* out\production\Dota Data\be\simonraes\dotadata\R$color.class
+* out\production\Dota Data\be\simonraes\dotadata\R$dimen.class
+* out\production\Dota Data\be\simonraes\dotadata\R$drawable.class
+* out\production\Dota Data\be\simonraes\dotadata\R$id.class
+* out\production\Dota Data\be\simonraes\dotadata\R$layout.class
+* out\production\Dota Data\be\simonraes\dotadata\R$menu.class
+* out\production\Dota Data\be\simonraes\dotadata\R$string.class
+* out\production\Dota Data\be\simonraes\dotadata\R$style.class
+* out\production\Dota Data\be\simonraes\dotadata\R$xml.class
+* out\production\Dota Data\be\simonraes\dotadata\R.class
+* out\production\Dota Data\be\simonraes\dotadata\activity\
+* out\production\Dota Data\be\simonraes\dotadata\activity\DrawerController$1.class
+* out\production\Dota Data\be\simonraes\dotadata\activity\DrawerController.class
+* out\production\Dota Data\be\simonraes\dotadata\activity\MatchActivity.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\
+* out\production\Dota Data\be\simonraes\dotadata\adapter\DrawerAdapter.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\FriendsListAdapter$1$1.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\FriendsListAdapter$1$2.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\FriendsListAdapter$1.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\FriendsListAdapter$ViewHolder.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\FriendsListAdapter.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\GameModeSpinnerAdapter.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\HeroSpinnerAdapter.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\HeroStatsGamesPlayedAdapter$1.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\HeroStatsGamesPlayedAdapter$ViewHolder.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\HeroStatsGamesPlayedAdapter.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\HeroStatsWinrateAdapter$1.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\HeroStatsWinrateAdapter$ViewHolder.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\HeroStatsWinrateAdapter.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\RankingSpinnerAdapter.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\RecentGamesAdapter$1.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\RecentGamesAdapter$ViewHolder.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\RecentGamesAdapter.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\ScreenSlidePagerAdapter.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\UsersAdapter$1$1.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\UsersAdapter$1$2.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\UsersAdapter$1.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\UsersAdapter$2.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\UsersAdapter$ViewHolder.class
+* out\production\Dota Data\be\simonraes\dotadata\adapter\UsersAdapter.class
+* out\production\Dota Data\be\simonraes\dotadata\application\
+* out\production\Dota Data\be\simonraes\dotadata\application\DotaDataApplication.class
+* out\production\Dota Data\be\simonraes\dotadata\async\
+* out\production\Dota Data\be\simonraes\dotadata\async\DetailMatchLoader$DetailMatchLoaderDelegate.class
+* out\production\Dota Data\be\simonraes\dotadata\async\DetailMatchLoader.class
+* out\production\Dota Data\be\simonraes\dotadata\async\StatsMatchesLoader$ASyncResponseStatsLoader.class
+* out\production\Dota Data\be\simonraes\dotadata\async\StatsMatchesLoader.class
+* out\production\Dota Data\be\simonraes\dotadata\comparator\
+* out\production\Dota Data\be\simonraes\dotadata\comparator\HeroStatsGamesPlayedComparator.class
+* out\production\Dota Data\be\simonraes\dotadata\comparator\HeroStatsWinrateComparator.class
+* out\production\Dota Data\be\simonraes\dotadata\comparator\PlayerSummaryNameComparator.class
+* out\production\Dota Data\be\simonraes\dotadata\database\
+* out\production\Dota Data\be\simonraes\dotadata\database\AbilityUpgradesDataSource.class
+* out\production\Dota Data\be\simonraes\dotadata\database\AdditionalUnitsDataSource.class
+* out\production\Dota Data\be\simonraes\dotadata\database\MatchesDataSource.class
+* out\production\Dota Data\be\simonraes\dotadata\database\MatchesExtrasDataSource.class
+* out\production\Dota Data\be\simonraes\dotadata\database\MatchesService.class
+* out\production\Dota Data\be\simonraes\dotadata\database\MySQLiteHelper.class
+* out\production\Dota Data\be\simonraes\dotadata\database\PicksBansDataSource.class
+* out\production\Dota Data\be\simonraes\dotadata\database\PlayersInMatchesDataSource.class
+* out\production\Dota Data\be\simonraes\dotadata\database\UsersDataSource.class
+* out\production\Dota Data\be\simonraes\dotadata\detailmatch\
+* out\production\Dota Data\be\simonraes\dotadata\detailmatch\AbilityUpgrades$1.class
+* out\production\Dota Data\be\simonraes\dotadata\detailmatch\AbilityUpgrades.class
+* out\production\Dota Data\be\simonraes\dotadata\detailmatch\AdditionalUnits$1.class
+* out\production\Dota Data\be\simonraes\dotadata\detailmatch\AdditionalUnits.class
+* out\production\Dota Data\be\simonraes\dotadata\detailmatch\DetailContainer$1.class
+* out\production\Dota Data\be\simonraes\dotadata\detailmatch\DetailContainer.class
+* out\production\Dota Data\be\simonraes\dotadata\detailmatch\DetailMatch$1.class
+* out\production\Dota Data\be\simonraes\dotadata\detailmatch\DetailMatch.class
+* out\production\Dota Data\be\simonraes\dotadata\detailmatch\DetailMatchExtras$1.class
+* out\production\Dota Data\be\simonraes\dotadata\detailmatch\DetailMatchExtras.class
+* out\production\Dota Data\be\simonraes\dotadata\detailmatch\DetailMatchLite$1.class
+* out\production\Dota Data\be\simonraes\dotadata\detailmatch\DetailMatchLite.class
+* out\production\Dota Data\be\simonraes\dotadata\detailmatch\DetailPlayer$1.class
+* out\production\Dota Data\be\simonraes\dotadata\detailmatch\DetailPlayer.class
+* out\production\Dota Data\be\simonraes\dotadata\detailmatch\PicksBans$1.class
+* out\production\Dota Data\be\simonraes\dotadata\detailmatch\PicksBans.class
+* out\production\Dota Data\be\simonraes\dotadata\dialog\
+* out\production\Dota Data\be\simonraes\dotadata\dialog\PlayerDetailsDialog.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\
+* out\production\Dota Data\be\simonraes\dotadata\fragment\AboutFragment$1.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\AboutFragment.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\AddUserFragment$1.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\AddUserFragment$2.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\AddUserFragment$3.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\AddUserFragment$4.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\AddUserFragment$5.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\AddUserFragment$onFocusListener.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\AddUserFragment.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\FriendsListFragment.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\GraphFragment.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\HeroesFragment.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\ManageUsersFragment.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\MatchDetailFragment$1.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\MatchDetailFragment$2.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\MatchDetailFragment$3.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\MatchDetailFragment.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\RecentGamesFragment$1.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\RecentGamesFragment.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\SearchFragment$1.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\SearchFragment$2.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\SearchFragment.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\SettingsFragment.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\StatsMatchesFragment.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\StatsNumbersFragment$1.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\StatsNumbersFragment$2.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\StatsNumbersFragment$3.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\StatsNumbersFragment$4.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\StatsNumbersFragment$5.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\StatsNumbersFragment.class
+* out\production\Dota Data\be\simonraes\dotadata\fragment\StatsPagerFragment.class
+* out\production\Dota Data\be\simonraes\dotadata\friendslist\
+* out\production\Dota Data\be\simonraes\dotadata\friendslist\Friend$1.class
+* out\production\Dota Data\be\simonraes\dotadata\friendslist\Friend.class
+* out\production\Dota Data\be\simonraes\dotadata\friendslist\FriendsList$1.class
+* out\production\Dota Data\be\simonraes\dotadata\friendslist\FriendsList.class
+* out\production\Dota Data\be\simonraes\dotadata\friendslist\FriendsListContainer$1.class
+* out\production\Dota Data\be\simonraes\dotadata\friendslist\FriendsListContainer.class
+* out\production\Dota Data\be\simonraes\dotadata\historyloading\
+* out\production\Dota Data\be\simonraes\dotadata\historyloading\DatabaseMatchLoader$ASyncResponseDatabase.class
+* out\production\Dota Data\be\simonraes\dotadata\historyloading\DatabaseMatchLoader.class
+* out\production\Dota Data\be\simonraes\dotadata\historyloading\HistoryLoader$1.class
+* out\production\Dota Data\be\simonraes\dotadata\historyloading\HistoryLoader$2.class
+* out\production\Dota Data\be\simonraes\dotadata\historyloading\HistoryLoader$3.class
+* out\production\Dota Data\be\simonraes\dotadata\historyloading\HistoryLoader$ASyncResponseHistoryLoader.class
+* out\production\Dota Data\be\simonraes\dotadata\historyloading\HistoryLoader.class
+* out\production\Dota Data\be\simonraes\dotadata\historymatch\
+* out\production\Dota Data\be\simonraes\dotadata\historymatch\HistoryContainer$1.class
+* out\production\Dota Data\be\simonraes\dotadata\historymatch\HistoryContainer.class
+* out\production\Dota Data\be\simonraes\dotadata\historymatch\HistoryMatch$1.class
+* out\production\Dota Data\be\simonraes\dotadata\historymatch\HistoryMatch.class
+* out\production\Dota Data\be\simonraes\dotadata\historymatch\HistoryMatches$1.class
+* out\production\Dota Data\be\simonraes\dotadata\historymatch\HistoryMatches.class
+* out\production\Dota Data\be\simonraes\dotadata\historymatch\HistoryPlayer$1.class
+* out\production\Dota Data\be\simonraes\dotadata\historymatch\HistoryPlayer.class
+* out\production\Dota Data\be\simonraes\dotadata\holograph\
+* out\production\Dota Data\be\simonraes\dotadata\holograph\Bar.class
+* out\production\Dota Data\be\simonraes\dotadata\holograph\BarGraph$OnBarClickedListener.class
+* out\production\Dota Data\be\simonraes\dotadata\holograph\BarGraph.class
+* out\production\Dota Data\be\simonraes\dotadata\holograph\Line.class
+* out\production\Dota Data\be\simonraes\dotadata\holograph\LineGraph$OnPointClickedListener.class
+* out\production\Dota Data\be\simonraes\dotadata\holograph\LineGraph.class
+* out\production\Dota Data\be\simonraes\dotadata\holograph\LinePoint.class
+* out\production\Dota Data\be\simonraes\dotadata\holograph\PieGraph$OnSliceClickedListener.class
+* out\production\Dota Data\be\simonraes\dotadata\holograph\PieGraph.class
+* out\production\Dota Data\be\simonraes\dotadata\holograph\PieSlice.class
+* out\production\Dota Data\be\simonraes\dotadata\parser\
+* out\production\Dota Data\be\simonraes\dotadata\parser\DetailMatchParser$ASyncResponseDetail.class
+* out\production\Dota Data\be\simonraes\dotadata\parser\DetailMatchParser.class
+* out\production\Dota Data\be\simonraes\dotadata\parser\DetailMatchesParser$ASyncResponseDetailList.class
+* out\production\Dota Data\be\simonraes\dotadata\parser\DetailMatchesParser.class
+* out\production\Dota Data\be\simonraes\dotadata\parser\FriendsListParser$ASyncResponseFriendsList.class
+* out\production\Dota Data\be\simonraes\dotadata\parser\FriendsListParser.class
+* out\production\Dota Data\be\simonraes\dotadata\parser\HistoryMatchParser$ASyncResponseHistory.class
+* out\production\Dota Data\be\simonraes\dotadata\parser\HistoryMatchParser.class
+* out\production\Dota Data\be\simonraes\dotadata\parser\PlayerSummaryParser$ASyncResponsePlayerSummary.class
+* out\production\Dota Data\be\simonraes\dotadata\parser\PlayerSummaryParser.class
+* out\production\Dota Data\be\simonraes\dotadata\parser\VanityResolverParser$ASyncResponseVanity.class
+* out\production\Dota Data\be\simonraes\dotadata\parser\VanityResolverParser.class
+* out\production\Dota Data\be\simonraes\dotadata\playersummary\
+* out\production\Dota Data\be\simonraes\dotadata\playersummary\PlayerSummary$1.class
+* out\production\Dota Data\be\simonraes\dotadata\playersummary\PlayerSummary.class
+* out\production\Dota Data\be\simonraes\dotadata\playersummary\PlayerSummaryContainer.class
+* out\production\Dota Data\be\simonraes\dotadata\playersummary\PlayerSummaryPlayers.class
+* out\production\Dota Data\be\simonraes\dotadata\statistics\
+* out\production\Dota Data\be\simonraes\dotadata\statistics\GameModeStats.class
+* out\production\Dota Data\be\simonraes\dotadata\statistics\GraphStats$1.class
+* out\production\Dota Data\be\simonraes\dotadata\statistics\GraphStats.class
+* out\production\Dota Data\be\simonraes\dotadata\statistics\GraphStatsCalculator$GraphStatsDelegate.class
+* out\production\Dota Data\be\simonraes\dotadata\statistics\GraphStatsCalculator.class
+* out\production\Dota Data\be\simonraes\dotadata\statistics\HeroStats$1.class
+* out\production\Dota Data\be\simonraes\dotadata\statistics\HeroStats.class
+* out\production\Dota Data\be\simonraes\dotadata\statistics\PlayedHeroesAndGameModes.class
+* out\production\Dota Data\be\simonraes\dotadata\statistics\PlayedHeroesMapper.class
+* out\production\Dota Data\be\simonraes\dotadata\statistics\RecordStats.class
+* out\production\Dota Data\be\simonraes\dotadata\statistics\TeamExperienceStats.class
+* out\production\Dota Data\be\simonraes\dotadata\ui\
+* out\production\Dota Data\be\simonraes\dotadata\ui\FillWidthImageView.class
+* out\production\Dota Data\be\simonraes\dotadata\user\
+* out\production\Dota Data\be\simonraes\dotadata\user\User.class
+* out\production\Dota Data\be\simonraes\dotadata\util\
+* out\production\Dota Data\be\simonraes\dotadata\util\AppPreferences.class
+* out\production\Dota Data\be\simonraes\dotadata\util\BuildingStatus$BuildingType.class
+* out\production\Dota Data\be\simonraes\dotadata\util\BuildingStatus$Side.class
+* out\production\Dota Data\be\simonraes\dotadata\util\BuildingStatus.class
+* out\production\Dota Data\be\simonraes\dotadata\util\Conversions.class
+* out\production\Dota Data\be\simonraes\dotadata\util\ExperienceList.class
+* out\production\Dota Data\be\simonraes\dotadata\util\GameModes.class
+* out\production\Dota Data\be\simonraes\dotadata\util\HeroList.class
+* out\production\Dota Data\be\simonraes\dotadata\util\ImageLoadListener.class
+* out\production\Dota Data\be\simonraes\dotadata\util\InternetCheck.class
+* out\production\Dota Data\be\simonraes\dotadata\util\InternetChecker$ASyncResponseInternet.class
+* out\production\Dota Data\be\simonraes\dotadata\util\InternetChecker.class
+* out\production\Dota Data\be\simonraes\dotadata\util\ItemList.class
+* out\production\Dota Data\be\simonraes\dotadata\util\MatchUtils.class
+* out\production\Dota Data\be\simonraes\dotadata\util\OrientationHelper.class
+* out\production\Dota Data\be\simonraes\dotadata\vanity\
+* out\production\Dota Data\be\simonraes\dotadata\vanity\VanityContainer.class
+* out\production\Dota Data\be\simonraes\dotadata\vanity\VanityResponse.class
+* proguard-project.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:19.1.0
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app\src\main\AndroidManifest.xml
+* libs\jackson-annotations-2.3.1.jar => app\libs\jackson-annotations-2.3.1.jar
+* libs\jackson-core-2.3.1.jar => app\libs\jackson-core-2.3.1.jar
+* libs\jackson-databind-2.3.1.jar => app\libs\jackson-databind-2.3.1.jar
+* libs\universal-image-loader-1.9.1.jar => app\libs\universal-image-loader-1.9.1.jar
+* res\ => app\src\main\res\
+* src\ => app\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

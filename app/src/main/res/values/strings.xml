@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dota Data</string>
+    <string name="drawer_close">Close</string>
+    <string name="drawer_open">Open</string>
+    <string name="btnDeleteNote">Delete note</string>
+    <string name="imgRadiantLogo">Radiant</string>
+    <string name="txtTeamExperience">Team experience</string>
+    <string name="imgMinimap">Minimap</string>
+    <string name="txtGraphsHeaderWinrate">Winrate</string>
+    <string name="txtGraphsHeaderGPM">Gold per minute</string>
+    <string name="txtGraphsHeaderLastHits">Last Hits</string>
+    <string name="txtGraphsHeaderKillsDeathsAssists">Kills, Deaths and Assists</string>
+    <string name="txtHeaderChangelog">Changelog</string>
+    <string name="txtHeaderUsedLibraries">Used libraries</string>
+    <string name="btnAddFriend">Add</string>
+    <string name="btnAddUserContentDescription">Add user</string>
+</resources>

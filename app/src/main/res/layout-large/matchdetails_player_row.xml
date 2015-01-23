@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <!-- Heroimage, playername-->
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:paddingBottom="5dp">
+        <ImageView android:layout_width="44dp" android:layout_height="24.61dp"
+                   android:id="@+id/imgDetailHero"
+                   android:adjustViewBounds="true"
+                   android:layout_centerVertical="true"
+                   android:layout_alignParentLeft="true"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/txtDetailPlayerLevel"
+                  android:layout_toRightOf="@id/imgDetailHero"
+                  android:paddingLeft="5dp"
+                  android:layout_centerVertical="true"
+                  android:text="lvl"/>
+        <ImageView android:layout_width="25dp" android:layout_height="25dp"
+                   android:id="@+id/imgDetailPlayer"
+                   android:src="@drawable/unknown_avatar"
+                   android:adjustViewBounds="true"
+                   android:layout_alignParentRight="true"
+                   android:layout_centerVertical="true"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/txtDetailPlayerName"
+                  android:layout_toLeftOf="@id/imgDetailPlayer"
+                  android:paddingRight="5dp"
+                  android:maxLength="25"
+                  android:layout_centerVertical="true"
+                  android:text="player name"/>
+    </RelativeLayout>
+    <!-- KDA, GPM, XPM-->
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:paddingBottom="5dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/txtDetailKDA"
+                  android:layout_alignParentLeft="true"
+                  android:text="k/d/a"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/txtDetailLHDenies"
+                  android:layout_centerHorizontal="true"
+                  android:text="lhd"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/txtDetailGPMXPM"
+                  android:layout_alignParentRight="true"
+                  android:text="gpmxpm"/>
+    </RelativeLayout>
+
+
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:layout_width="53dp" android:layout_height="40dp"
+                   android:id="@+id/imgItem1"
+                   android:layout_margin="1dp"
+                   android:adjustViewBounds="true"
+                   android:src="@drawable/item_lg_unknown"/>
+        <ImageView android:layout_width="53dp" android:layout_height="40dp"
+                   android:id="@+id/imgItem2"
+                   android:layout_margin="1dp"
+                   android:adjustViewBounds="true"
+                   android:src="@drawable/item_lg_unknown"/>
+        <ImageView android:layout_width="53dp" android:layout_height="40dp"
+                   android:id="@+id/imgItem3"
+                   android:layout_margin="1dp"
+                   android:adjustViewBounds="true"
+                   android:src="@drawable/item_lg_unknown"/>
+        <ImageView android:layout_width="53dp" android:layout_height="40dp"
+                   android:id="@+id/imgItem4"
+                   android:layout_margin="1dp"
+                   android:adjustViewBounds="true"
+                   android:src="@drawable/item_lg_unknown"/>
+        <ImageView android:layout_width="53dp" android:layout_height="40dp"
+                   android:id="@+id/imgItem5"
+                   android:layout_margin="1dp"
+                   android:adjustViewBounds="true"
+                   android:src="@drawable/item_lg_unknown"/>
+        <ImageView android:layout_width="53dp" android:layout_height="40dp"
+                   android:id="@+id/imgItem6"
+                   android:layout_margin="1dp"
+                   android:adjustViewBounds="true"
+                   android:src="@drawable/item_lg_unknown"/>
+    </LinearLayout>
+
+</LinearLayout>

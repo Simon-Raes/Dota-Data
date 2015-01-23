@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- This file contains all options under the settings menu. -->
+    <PreferenceCategory
+            android:key="pref_key_account_settings"
+            android:title="Account">
+        <!-- Account should be set through accountIDhelp screen so the correct methods are called
+                <EditTextPreference
+                        android:defaultValue="0"
+                        android:inputType="number"
+                        android:key="be.simonraes.dotadata.accountid"
+                        android:summary="accountID here"
+                        android:title="Dota account ID"/>
+        -->
+        <Preference android:title="Set Dota 2 account ID"
+                    android:summary="Change your account ID to view matches from a different user.">
+            <intent
+                    android:action="android.intent.action.VIEW"
+                    android:targetPackage="be.simonraes.dotadata"
+                    android:targetClass="be.simonraes.dotadata.activity.AccountIDHelpActivity"/>
+        </Preference>
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>
