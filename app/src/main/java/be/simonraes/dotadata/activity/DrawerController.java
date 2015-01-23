@@ -8,6 +8,9 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
 import android.view.*;
 import android.widget.*;
+
+import com.squareup.picasso.Picasso;
+
 import be.simonraes.dotadata.R;
 import be.simonraes.dotadata.adapter.DrawerAdapter;
 import be.simonraes.dotadata.database.UsersDataSource;
@@ -15,12 +18,10 @@ import be.simonraes.dotadata.fragment.*;
 import be.simonraes.dotadata.historyloading.HistoryLoader;
 import be.simonraes.dotadata.statistics.PlayedHeroesMapper;
 import be.simonraes.dotadata.user.User;
-import be.simonraes.dotadata.util.ImageLoadListener;
 import be.simonraes.dotadata.util.AppPreferences;
+import be.simonraes.dotadata.util.HeroList;
 import be.simonraes.dotadata.util.OrientationHelper;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
+
 
 public class DrawerController extends FragmentActivity implements ListView.OnItemClickListener {
 
@@ -170,14 +171,7 @@ public class DrawerController extends FragmentActivity implements ListView.OnIte
         User user = uds.getUserByID(accountId);
         imgAvatar = (ImageView) findViewById(R.id.imgDrawerSliderAvatar);
         //user avatar
-        ImageLoader imageLoader = ImageLoader.getInstance();
-        ImageLoadListener animateFirstListener = new ImageLoadListener();
-        DisplayImageOptions options = new DisplayImageOptions.Builder()
-                .resetViewBeforeLoading(true)
-                .cacheInMemory(true)
-                .imageScaleType(ImageScaleType.EXACTLY)
-                .build();
-        imageLoader.displayImage(user.getAvatar(), imgAvatar, options, animateFirstListener);
+        Picasso.with(imgAvatar.getContext()).load(user.getAvatar()).placeholder(R.drawable.hero_sb_loading).into(imgAvatar);
 
         TextView txtName = (TextView) findViewById(R.id.txtDrawerSliderName);
         txtName.setText(user.getName());

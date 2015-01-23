@@ -13,6 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+
+import com.squareup.picasso.Picasso;
+
 import be.simonraes.dotadata.R;
 import be.simonraes.dotadata.activity.MatchActivity;
 import be.simonraes.dotadata.async.DetailMatchLoader;
@@ -25,10 +28,6 @@ import be.simonraes.dotadata.holograph.PieGraph;
 import be.simonraes.dotadata.holograph.PieSlice;
 import be.simonraes.dotadata.statistics.RecordStats;
 import be.simonraes.dotadata.util.*;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 
 import java.util.*;
 
@@ -399,14 +398,6 @@ public class StatsNumbersFragment extends Fragment implements View.OnClickListen
         layRecords.addView(header);
         layRecords.addView(inflater.inflate(R.layout.divider, null));
 
-        ImageLoader imageLoader = ImageLoader.getInstance();
-        ImageLoadingListener animateFirstListener = new ImageLoadListener();
-        DisplayImageOptions options = new DisplayImageOptions.Builder()
-                .resetViewBeforeLoading(true)
-                .cacheInMemory(true)
-                .showImageOnLoading(R.drawable.hero_sb_loading)
-                .imageScaleType(ImageScaleType.EXACTLY)
-                .build();
 
         for (RecordStats s : recordStatsList) {
             View recordRow = inflater.inflate(R.layout.stats_record_row, null);
@@ -417,8 +408,7 @@ public class StatsNumbersFragment extends Fragment implements View.OnClickListen
             TextView txtRecord = (TextView) recordRow.findViewById(R.id.txtTestRecord);
             TextView txtInfo = (TextView) recordRow.findViewById(R.id.txtTestGameMode);
 
-
-            imageLoader.displayImage("http://cdn.dota2.com/apps/dota2/images/heroes/" + HeroList.getHeroImageName(s.getHeroId()) + "_lg.png", imgHero, options, animateFirstListener);
+            Picasso.with(getActivity()).load("http://cdn.dota2.com/apps/dota2/images/heroes/" + HeroList.getHeroImageName(s.getHeroId()) + "_lg.png").placeholder(R.drawable.hero_sb_loading).into(imgHero);
 
             // Special case: duration record has to be converted from seconds to HH:MM:SS
             if (s.getRecord().contains("Longest")) {

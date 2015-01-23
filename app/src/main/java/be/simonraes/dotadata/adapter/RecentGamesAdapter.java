@@ -7,13 +7,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
 import be.simonraes.dotadata.R;
 import be.simonraes.dotadata.detailmatch.DetailMatchLite;
 import be.simonraes.dotadata.util.*;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 
 import java.util.ArrayList;
 
@@ -27,24 +26,10 @@ public class RecentGamesAdapter extends ArrayAdapter<DetailMatchLite> {
     private Context context;
     private ArrayList<DetailMatchLite> matches;
 
-    private ImageLoader imageLoader;
-    private DisplayImageOptions options;
-    private ImageLoadingListener animateFirstListener;
-
     public RecentGamesAdapter(Context context, ArrayList<DetailMatchLite> objects) {
         super(context, R.layout.matches_list_row, objects);
         this.context = context;
         this.matches = objects;
-
-        imageLoader = ImageLoader.getInstance();
-        animateFirstListener = new ImageLoadListener();
-        options = new DisplayImageOptions.Builder()
-                .resetViewBeforeLoading(true)
-                .cacheInMemory(true)
-                .cacheOnDisc(true)
-                .showImageOnLoading(R.drawable.hero_loading_lg)
-                .imageScaleType(ImageScaleType.EXACTLY)
-                .build();
     }
 
     @Override
@@ -81,7 +66,7 @@ public class RecentGamesAdapter extends ArrayAdapter<DetailMatchLite> {
 
         viewholder.txtDate.setText(Conversions.millisToDate(match.getStart_time()));
 
-        imageLoader.displayImage("http://cdn.dota2.com/apps/dota2/images/heroes/" + HeroList.getHeroImageName(match.getHero_id()) + "_lg.png", viewholder.imgHero, options, animateFirstListener);
+        Picasso.with(context).load("http://cdn.dota2.com/apps/dota2/images/heroes/" + HeroList.getHeroImageName(match.getHero_id()) + "_lg.png").placeholder(R.drawable.hero_loading_lg).into(viewholder.imgHero);
 
 
         if (match.isFavourite()) {

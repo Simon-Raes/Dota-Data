@@ -10,6 +10,9 @@ import android.view.*;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
+
+import com.squareup.picasso.Picasso;
+
 import be.simonraes.dotadata.R;
 import be.simonraes.dotadata.activity.DrawerController;
 import be.simonraes.dotadata.database.UsersDataSource;
@@ -20,9 +23,6 @@ import be.simonraes.dotadata.playersummary.PlayerSummaryContainer;
 import be.simonraes.dotadata.user.User;
 import be.simonraes.dotadata.util.*;
 import be.simonraes.dotadata.vanity.VanityContainer;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 
 /**
  * Created by Simon on 13/02/14.
@@ -273,16 +273,8 @@ public class AddUserFragment extends Fragment implements View.OnClickListener, V
                             .show();
 
                     // Set found player avatar in the dialog.
-                    ImageLoader imageLoader = ImageLoader.getInstance();
-                    DisplayImageOptions options = new DisplayImageOptions.Builder()
-                            .resetViewBeforeLoading(true)
-                            .cacheInMemory(true)
-                            .showImageOnLoading(R.drawable.item_lg_unknown)
-                            .imageScaleType(ImageScaleType.EXACTLY)
-                            .build();
-                    ImageLoadListener animateFirstListener = new ImageLoadListener();
+                    Picasso.with(getActivity()).load(result.getPlayers().getPlayers().get(0).getAvatarmedium()).into(imgDialog);
 
-                    imageLoader.displayImage(result.getPlayers().getPlayers().get(0).getAvatarmedium(), imgDialog, options, animateFirstListener);
                 }
             } else {
                 Toast.makeText(getActivity(), "Could not find a Dota 2 account ID for that user. Please try a different username or number.", Toast.LENGTH_LONG).show();

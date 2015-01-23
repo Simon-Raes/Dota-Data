@@ -8,15 +8,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
 import be.simonraes.dotadata.R;
 import be.simonraes.dotadata.statistics.HeroStats;
-import be.simonraes.dotadata.util.ImageLoadListener;
 import be.simonraes.dotadata.util.Conversions;
 import be.simonraes.dotadata.util.HeroList;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
+
 
 import java.util.ArrayList;
 
@@ -27,10 +26,6 @@ public class HeroStatsGamesPlayedAdapter extends ArrayAdapter<HeroStats> {
 
     private Context context;
     private ArrayList<HeroStats> heroes;
-
-    private ImageLoader imageLoader;
-    private DisplayImageOptions options;
-    private ImageLoadingListener animateFirstListener;
 
     private int higestGames = 0;
 
@@ -45,15 +40,6 @@ public class HeroStatsGamesPlayedAdapter extends ArrayAdapter<HeroStats> {
             }
         }
 
-        imageLoader = ImageLoader.getInstance();
-        animateFirstListener = new ImageLoadListener();
-        options = new DisplayImageOptions.Builder()
-                .resetViewBeforeLoading(true)
-                .cacheInMemory(true)
-                .cacheOnDisc(true)
-                .showImageOnLoading(R.drawable.hero_loading_lg)
-                .imageScaleType(ImageScaleType.EXACTLY)
-                .build();
     }
 
     @Override
@@ -86,7 +72,7 @@ public class HeroStatsGamesPlayedAdapter extends ArrayAdapter<HeroStats> {
                 LinearLayout.LayoutParams.MATCH_PARENT, higestGames - heroStats.getNumberOfGames());
         viewholder.layLoss.setLayoutParams(param);
 
-        imageLoader.displayImage("http://cdn.dota2.com/apps/dota2/images/heroes/" + HeroList.getHeroImageName(heroStats.getHero_id()) + "_lg.png", viewholder.imgHero, options, animateFirstListener);
+        Picasso.with(context).load("http://cdn.dota2.com/apps/dota2/images/heroes/" + HeroList.getHeroImageName(heroStats.getHero_id()) + "_lg.png").placeholder(R.drawable.hero_loading_lg).into(viewholder.imgHero);
 
         viewholder.txtHero.setText("Winrate: " + Double.toString(Conversions.roundDouble(heroStats.getWinrate(), 2)) + "%");
         viewholder.txtHeroTwo.setText("Games: " + heroStats.getNumberOfGames());

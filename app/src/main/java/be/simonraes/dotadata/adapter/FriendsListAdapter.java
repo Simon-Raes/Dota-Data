@@ -7,18 +7,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+
+import com.squareup.picasso.Picasso;
+
 import be.simonraes.dotadata.R;
 import be.simonraes.dotadata.activity.DrawerController;
 import be.simonraes.dotadata.historyloading.HistoryLoader;
 import be.simonraes.dotadata.playersummary.PlayerSummary;
 import be.simonraes.dotadata.user.User;
 import be.simonraes.dotadata.util.Conversions;
-import be.simonraes.dotadata.util.ImageLoadListener;
 import be.simonraes.dotadata.util.OrientationHelper;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
+
 
 import java.util.ArrayList;
 
@@ -30,24 +29,12 @@ public class FriendsListAdapter extends ArrayAdapter<PlayerSummary> implements H
     private ArrayList<PlayerSummary> friends;
     private PlayerSummary clickedFriend;
 
-    private ImageLoader imageLoader;
-    private DisplayImageOptions options;
-    private ImageLoadingListener animateFirstListener;
-
     private FriendsListAdapter thisAdapater = this;
 
     public FriendsListAdapter(Context context, ArrayList<PlayerSummary> objects) {
         super(context, R.layout.friends_list_row, objects);
         this.context = context;
         this.friends = objects;
-
-        imageLoader = ImageLoader.getInstance();
-        animateFirstListener = new ImageLoadListener();
-        options = new DisplayImageOptions.Builder()
-                .resetViewBeforeLoading(true)
-                .cacheInMemory(true)
-                .imageScaleType(ImageScaleType.EXACTLY)
-                .build();
     }
 
     @Override
@@ -71,7 +58,8 @@ public class FriendsListAdapter extends ArrayAdapter<PlayerSummary> implements H
 
 
         viewholder.txtName.setText(friend.getPersonaname());
-        imageLoader.displayImage(friend.getAvatarmedium(), viewholder.imgAvatar, options, animateFirstListener);
+        Picasso.with(context).load(friend.getAvatarmedium()).into(viewholder.imgAvatar);
+
         viewholder.btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

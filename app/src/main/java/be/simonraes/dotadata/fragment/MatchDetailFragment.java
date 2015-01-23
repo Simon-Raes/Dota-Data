@@ -21,6 +21,9 @@ import android.text.InputType;
 import android.view.*;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
+
+import com.squareup.picasso.Picasso;
+
 import be.simonraes.dotadata.R;
 import be.simonraes.dotadata.activity.DrawerController;
 import be.simonraes.dotadata.database.MatchesExtrasDataSource;
@@ -35,10 +38,6 @@ import be.simonraes.dotadata.parser.PlayerSummaryParser;
 import be.simonraes.dotadata.playersummary.PlayerSummaryContainer;
 import be.simonraes.dotadata.statistics.TeamExperienceStats;
 import be.simonraes.dotadata.util.*;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -55,10 +54,6 @@ public class MatchDetailFragment extends Fragment implements ViewTreeObserver.On
 
     private LayoutInflater inflater;
     private View view;
-
-    private ImageLoader imageLoader;
-    private DisplayImageOptions options;
-    private ImageLoadingListener animateFirstListener;
 
     private ArrayList<TextView> playerNames;
     private ArrayList<PlayerSummaryParser> parsers;
@@ -172,15 +167,6 @@ public class MatchDetailFragment extends Fragment implements ViewTreeObserver.On
         LinearLayout layPlayersRadiant = (LinearLayout) view.findViewById(R.id.layDetailRadiantPlayers);
         LinearLayout layPlayersDire = (LinearLayout) view.findViewById(R.id.layDetailDirePlayers);
 
-        imageLoader = ImageLoader.getInstance();
-        animateFirstListener = new ImageLoadListener();
-        options = new DisplayImageOptions.Builder()
-                .resetViewBeforeLoading(true)
-                .cacheInMemory(true)
-                .showImageOnLoading(R.drawable.hero_sb_loading)
-                .imageScaleType(ImageScaleType.EXACTLY)
-                .build();
-
         int numberOfRadiantPlayers = 0;
         int numberOfDirePlayers = 0;
 
@@ -246,23 +232,10 @@ public class MatchDetailFragment extends Fragment implements ViewTreeObserver.On
             TextView txtPlayerGPMXPM = (TextView) playerRow.findViewById(R.id.txtDetailGPMXPM);
             txtPlayerGPMXPM.setText(player.getGold_per_min() + "/" + player.getXp_per_min());
 
-            options = new DisplayImageOptions.Builder()
-                    .resetViewBeforeLoading(true)
-                    .cacheInMemory(true)
-                    .cacheOnDisc(true)
-                    .showImageOnLoading(R.drawable.hero_sb_loading)
-                    .imageScaleType(ImageScaleType.EXACTLY)
-                    .build();
 
             ImageView imgHero = (ImageView) playerRow.findViewById(R.id.imgDetailHero);
-            imageLoader.displayImage("http://cdn.dota2.com/apps/dota2/images/heroes/" + HeroList.getHeroImageName(player.getHero_id()) + "_sb.png", imgHero, options, animateFirstListener);
-            options = new DisplayImageOptions.Builder()
-                    .resetViewBeforeLoading(true)
-                    .cacheInMemory(true)
-                    .cacheOnDisc(true)
-                    .showImageOnLoading(R.drawable.item_lg_unknown)
-                    .showImageOnFail(R.drawable.item_lg_unknown)
-                    .build();
+            Picasso.with(getActivity()).load("http://cdn.dota2.com/apps/dota2/images/heroes/" + HeroList.getHeroImageName(player.getHero_id()) + "_sb.png").into(imgHero);
+
 
 
             ImageView imgItem = (ImageView) playerRow.findViewById(R.id.imgItem1);
@@ -383,13 +356,6 @@ public class MatchDetailFragment extends Fragment implements ViewTreeObserver.On
 
             for (PicksBans pb : match.getPicks_bans()) {
 
-                options = new DisplayImageOptions.Builder()
-                        .resetViewBeforeLoading(true)
-                        .cacheInMemory(true)
-                        .showImageOnLoading(R.drawable.hero_sb_loading)
-                        .imageScaleType(ImageScaleType.EXACTLY)
-                        .build();
-
                 LinearLayout layPicksBansEntry = (LinearLayout) inflater.inflate(R.layout.pickban_entry, null);
                 ImageView imgPBHero = (ImageView) layPicksBansEntry.findViewById(R.id.imgPickBanRight);
                 TextView txtPBTop = (TextView) layPicksBansEntry.findViewById(R.id.txtPickBanTop);
@@ -414,7 +380,10 @@ public class MatchDetailFragment extends Fragment implements ViewTreeObserver.On
                         txtPBBottom.setTextColor(getActivity().getResources().getColor(R.color.DireOrange));
                     }
                 }
-                imageLoader.displayImage("http://cdn.dota2.com/apps/dota2/images/heroes/" + HeroList.getHeroImageName(pb.getHero_id()) + "_sb.png", imgPBHero, options, animateFirstListener);
+
+                Picasso.with(getActivity()).load("http://cdn.dota2.com/apps/dota2/images/heroes/" + HeroList.getHeroImageName(pb.getHero_id()) + "_sb.png").placeholder(R.drawable.hero_sb_loading).into(imgPBHero);
+
+
                 layPicksBans.addView(layPicksBansEntry);
             }
         }
@@ -510,7 +479,7 @@ public class MatchDetailFragment extends Fragment implements ViewTreeObserver.On
             if (item_id.equals("0")) {
                 imgItem.setImageResource(R.drawable.emptyitembg_lg);
             } else {
-                imageLoader.displayImage("http://cdn.dota2.com/apps/dota2/images/items/" + ItemList.getItem(item_id) + "_lg.png", imgItem, options, animateFirstListener);
+                Picasso.with(getActivity()).load("http://cdn.dota2.com/apps/dota2/images/items/" + ItemList.getItem(item_id) + "_lg.png").placeholder(R.drawable.hero_sb_loading).into(imgItem);
             }
         }
     }
@@ -677,7 +646,7 @@ public class MatchDetailFragment extends Fragment implements ViewTreeObserver.On
                     for (ImageView imgView : playerAvatars) {
                         if (imgView.getTag() != null) {
                             if (imgView.getTag().equals(Conversions.steam64IdToSteam32Id(result.getPlayers().getPlayers().get(0).getSteamid()))) {
-                                imageLoader.displayImage(result.getPlayers().getPlayers().get(0).getAvatar(), imgView, options, animateFirstListener);
+                                Picasso.with(getActivity()).load(result.getPlayers().getPlayers().get(0).getAvatar()).placeholder(R.drawable.hero_sb_loading).into(imgView);
                             }
                         }
                     }

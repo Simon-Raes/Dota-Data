@@ -8,18 +8,17 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
 import be.simonraes.dotadata.R;
 import be.simonraes.dotadata.detailmatch.DetailPlayer;
 import be.simonraes.dotadata.parser.PlayerSummaryParser;
 import be.simonraes.dotadata.playersummary.PlayerSummaryContainer;
 import be.simonraes.dotadata.util.HeroList;
-import be.simonraes.dotadata.util.ImageLoadListener;
 import be.simonraes.dotadata.util.InternetCheck;
 import be.simonraes.dotadata.util.MatchUtils;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
+
 
 import java.util.ArrayList;
 
@@ -31,9 +30,7 @@ public class PlayerDetailsDialog extends DialogFragment implements PlayerSummary
 
     private DetailPlayer player;
     private String duration;
-    private ImageLoader imageLoader;
-    private DisplayImageOptions options;
-    private ImageLoadingListener animateFirstListener;
+
 
     private View view;
     private TextView txtPlayerName;
@@ -100,15 +97,7 @@ public class PlayerDetailsDialog extends DialogFragment implements PlayerSummary
             }
         }
 
-        imageLoader = ImageLoader.getInstance();
-        animateFirstListener = new ImageLoadListener();
-        options = new DisplayImageOptions.Builder()
-                .resetViewBeforeLoading(true)
-                .cacheInMemory(true)
-                .imageScaleType(ImageScaleType.EXACTLY)
-                .build();
-
-        imageLoader.displayImage("http://cdn.dota2.com/apps/dota2/images/heroes/" + HeroList.getHeroImageName(player.getHero_id()) + "_full.png", imgHero, options, animateFirstListener);
+        Picasso.with(getActivity()).load("http://cdn.dota2.com/apps/dota2/images/heroes/" + HeroList.getHeroImageName(player.getHero_id()) + "_full.png").into(imgHero);
 
     }
 
@@ -154,6 +143,7 @@ public class PlayerDetailsDialog extends DialogFragment implements PlayerSummary
     @Override
     public void processFinish(PlayerSummaryContainer result) {
         txtPlayerName.setText(result.getPlayers().getPlayers().get(0).getPersonaname());
-        imageLoader.displayImage(result.getPlayers().getPlayers().get(0).getAvatarfull(), imgAvatar, options, animateFirstListener);
+        Picasso.with(getActivity()).load(result.getPlayers().getPlayers().get(0).getAvatarfull()).into(imgAvatar);
+
     }
 }

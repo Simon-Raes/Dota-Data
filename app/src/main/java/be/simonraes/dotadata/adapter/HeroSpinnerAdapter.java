@@ -7,14 +7,12 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
 import be.simonraes.dotadata.R;
-import be.simonraes.dotadata.util.ImageLoadListener;
 import be.simonraes.dotadata.util.Conversions;
 import be.simonraes.dotadata.util.HeroList;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,10 +25,6 @@ public class HeroSpinnerAdapter extends BaseAdapter implements android.widget.Sp
 
     private ArrayList<String> names;
     private ArrayList<String> keys;
-
-    private ImageLoader imageLoader;
-    private DisplayImageOptions options;
-    private ImageLoadingListener animateFirstListener;
 
     private HashMap<String, String> spinnerContent;
 
@@ -75,20 +69,11 @@ public class HeroSpinnerAdapter extends BaseAdapter implements android.widget.Sp
 
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.hero_picker_row_selected, null);
-
-            imageLoader = ImageLoader.getInstance();
-            animateFirstListener = new ImageLoadListener();
-            options = new DisplayImageOptions.Builder()
-                    .resetViewBeforeLoading(true)
-                    .cacheInMemory(true)
-                    .showImageOnLoading(R.drawable.hero_sb_loading)
-                    .imageScaleType(ImageScaleType.EXACTLY)
-                    .build();
         }
 
         ImageView imgHero = (ImageView) convertView.findViewById(R.id.imgPickerHero);
 
-        imageLoader.displayImage("http://cdn.dota2.com/apps/dota2/images/heroes/" + HeroList.getHeroImageName(keys.get(position)) + "_sb.png", imgHero, options, animateFirstListener);
+        Picasso.with(context).load("http://cdn.dota2.com/apps/dota2/images/heroes/" + HeroList.getHeroImageName(keys.get(position)) + "_sb.png").placeholder(R.drawable.hero_sb_loading).into(imgHero);
 
         return convertView;
     }
@@ -100,21 +85,13 @@ public class HeroSpinnerAdapter extends BaseAdapter implements android.widget.Sp
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.hero_picker_row, null);
 
-            imageLoader = ImageLoader.getInstance();
-            animateFirstListener = new ImageLoadListener();
-            options = new DisplayImageOptions.Builder()
-                    .resetViewBeforeLoading(true)
-                    .cacheInMemory(true)
-                    .showImageOnLoading(R.drawable.hero_sb_loading)
-                    .imageScaleType(ImageScaleType.EXACTLY)
-                    .build();
         }
 
         ImageView imgHero = (ImageView) convertView.findViewById(R.id.imgPickerHero);
         TextView txtHero = (TextView) convertView.findViewById(R.id.txtPickerHero);
         txtHero.setText(names.get(position));
 
-        imageLoader.displayImage("http://cdn.dota2.com/apps/dota2/images/heroes/" + HeroList.getHeroImageName(keys.get(position)) + "_sb.png", imgHero, options, animateFirstListener);
+        Picasso.with(context).load("http://cdn.dota2.com/apps/dota2/images/heroes/" + HeroList.getHeroImageName(keys.get(position)) + "_sb.png").placeholder(R.drawable.hero_sb_loading).into(imgHero);
 
         return convertView;
     }

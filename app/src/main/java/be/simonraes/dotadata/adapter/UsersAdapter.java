@@ -8,15 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+
+import com.squareup.picasso.Picasso;
+
 import be.simonraes.dotadata.R;
 import be.simonraes.dotadata.database.MatchesDataSource;
 import be.simonraes.dotadata.database.UsersDataSource;
 import be.simonraes.dotadata.historyloading.HistoryLoader;
 import be.simonraes.dotadata.user.User;
 import be.simonraes.dotadata.util.*;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 
 import java.util.ArrayList;
 
@@ -69,14 +69,7 @@ public class UsersAdapter extends ArrayAdapter<User> implements HistoryLoader.AS
         viewholder.txtUser.setText(user.getName());
 
         // User avatar
-        ImageLoader imageLoader = ImageLoader.getInstance();
-        ImageLoadListener animateFirstListener = new ImageLoadListener();
-        DisplayImageOptions options = new DisplayImageOptions.Builder()
-                .resetViewBeforeLoading(true)
-                .cacheInMemory(true)
-                .imageScaleType(ImageScaleType.EXACTLY)
-                .build();
-        imageLoader.displayImage(user.getAvatar(), viewholder.imgUser, options, animateFirstListener);
+        Picasso.with(context).load(user.getAvatar()).into(viewholder.imgUser);
 
         final User finalUser = users.get(position);
         final UsersAdapter finalAdapter = this;
