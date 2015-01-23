@@ -106,7 +106,7 @@ public class HistoryLoader implements HistoryMatchParser.ASyncResponseHistory, D
 
         if (apiAvailable) {
             //start parser
-            parser = new HistoryMatchParser(this);
+            parser = new HistoryMatchParser(context, this);
             parser.execute(accountID);
         } else {
 
@@ -182,7 +182,7 @@ public class HistoryLoader implements HistoryMatchParser.ASyncResponseHistory, D
 
                     matches.addAll(result.getRecentGames().getMatches());
                     //start parser for next page of results
-                    parser = new HistoryMatchParser(this);
+                    parser = new HistoryMatchParser(context, this);
 
                     int iNextMatchID = Integer.parseInt(result.getRecentGames().getMatches().get(result.getRecentGames().getMatches().size() - 1).getMatch_id()) - 1;
                     String nextMatchID = Integer.toString(iNextMatchID);

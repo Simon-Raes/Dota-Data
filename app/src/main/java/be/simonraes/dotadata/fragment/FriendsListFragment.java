@@ -95,7 +95,7 @@ public class FriendsListFragment extends Fragment implements FriendsListParser.A
         numberOfFriends = 0;
         friendSummaries.clear();
 
-        FriendsListParser parser = new FriendsListParser(this);
+        FriendsListParser parser = new FriendsListParser(getActivity(), this);
         parser.execute(Conversions.steam32IdToSteam64Id(AppPreferences.getActiveAccountId(getActivity())));
     }
 
@@ -107,7 +107,7 @@ public class FriendsListFragment extends Fragment implements FriendsListParser.A
         if(result!=null && result.getFriendslist()!=null) {
             numberOfFriends = result.getFriendslist().getFriends().size();
             for (Friend friend : result.getFriendslist().getFriends()) {
-                PlayerSummaryParser parser = new PlayerSummaryParser(this);
+                PlayerSummaryParser parser = new PlayerSummaryParser(getActivity(), this);
                 parser.execute(friend.getSteamid());
             }
         }

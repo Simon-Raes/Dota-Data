@@ -112,7 +112,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener, De
             } else {
                 // Not saved yet, download it. This parser does NOT store the match in the database
                 // (users could download only their wins and skew the stats if it did)
-                DetailMatchParser parser = new DetailMatchParser(this);
+                DetailMatchParser parser = new DetailMatchParser(getActivity(), this);
                 parser.execute(matchID);
                 OrientationHelper.lockOrientation(getActivity());
                 introDialog = ProgressDialog.show(getActivity(), "", "Searching.", true);

@@ -165,7 +165,7 @@ public class AddUserFragment extends Fragment implements View.OnClickListener, V
 
         if (InternetCheck.isOnline(getActivity())) {
             if (!etxtIDName.getText().toString().equals("") && etxtIDName.getText().toString() != null) {
-                VanityResolverParser parser = new VanityResolverParser(this);
+                VanityResolverParser parser = new VanityResolverParser(getActivity(), this);
                 parser.execute(etxtIDName.getText().toString());
             } else {
                 saveDotaID("0");
@@ -212,7 +212,7 @@ public class AddUserFragment extends Fragment implements View.OnClickListener, V
             userAccountID = accountID;
 
             // Get player information
-            PlayerSummaryParser parser = new PlayerSummaryParser(this);
+            PlayerSummaryParser parser = new PlayerSummaryParser(getActivity(), this);
             parser.execute(accountID);
 
         } else {

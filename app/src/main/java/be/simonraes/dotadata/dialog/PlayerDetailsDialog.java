@@ -94,7 +94,7 @@ public class PlayerDetailsDialog extends DialogFragment implements PlayerSummary
             txtPlayerName.setText("Anonymous");
         } else {
             if (InternetCheck.isOnline(getActivity())) {
-                PlayerSummaryParser parser = new PlayerSummaryParser(this);
+                PlayerSummaryParser parser = new PlayerSummaryParser(txtPlayerName.getContext(), this);
                 parser.execute(player.getAccount_id());
                 parsers.add(parser);
             }

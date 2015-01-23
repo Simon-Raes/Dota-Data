@@ -223,7 +223,7 @@ public class MatchDetailFragment extends Fragment implements ViewTreeObserver.On
                     } else if (player.getAccount_id().equals("4294967295")) {
                         txtPlayerName.setText("Anonymous");
                     } else {
-                        PlayerSummaryParser parser = new PlayerSummaryParser(this);
+                        PlayerSummaryParser parser = new PlayerSummaryParser(getActivity(), this);
                         parser.execute(player.getAccount_id());
                         parsers.add(parser);
                     }
